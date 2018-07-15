@@ -43,7 +43,6 @@
 
 // scripts
 #define FLAG_SET_WALL_CLOCK                 0x51
-#define FLAG_RESCUED_BIRCH                  0x52
 
 #define FLAG_LINK_CONTEST_ROOM_POKEBALL     0x56
 #define FLAG_MET_RIVAL_MOM                  0x57
@@ -252,7 +251,7 @@
 #define FLAG_RECEIVED_BELDUM                0x12A
 #define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK  0x12B
 #define FLAG_MET_FANCLUB_YOUNGER_BROTHER    0x12C
-#define FLAG_RIVAL_LEFT_FOR_ROUTE103        0x12D
+
 #define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER   0x12E
 
 // hidden item flags
@@ -358,9 +357,6 @@
 
 
 // event object hide/show flags
-#define FLAG_HIDE_BIRCH_STARTERS_BAG        0x2BC
-
-#define FLAG_HIDE_BIRCH_BATTLE_POOCHYENA    0x2D0
 #define FLAG_HIDE_BIRCH_IN_LAB              0x2D1
 #define FLAG_HIDE_MAY_UPSTAIRS              0x2D2
 #define FLAG_HIDE_RIVAL_ROUTE103            0x2D3
@@ -387,9 +383,8 @@
 #define FLAG_UNKNOWN_2EB                    0x2EB
 #define FLAG_UNKNOWN_2EC                    0x2EC
 #define FLAG_UNKNOWN_2ED                    0x2ED
-#define FLAG_HIDE_POOCHYENA_ROUTE101        0x2EE
+
 #define FLAG_HIDE_WALLY_DEFEATED_VICTORY_ROAD 0x2EF
-#define FLAG_HIDE_MOM_LITTLEROOT            0x2F0
 
 #define FLAG_HIDE_MACHOKE_MOVER_1           0x2F2
 #define FLAG_HIDE_MACHOKE_MOVER_2           0x2F3
@@ -398,8 +393,6 @@
 #define FLAG_HIDE_BRENDAN_MOM_DOWNSTAIRS    0x2F6
 #define FLAG_HIDE_MAY_MOM_DOWNSTAIRS        0x2F7
 #define FLAG_HIDE_BRENDAN_UPSTAIRS          0x2F8
-#define FLAG_HIDE_MOVING_TRUCK_BRENDAN      0x2F9
-#define FLAG_HIDE_MOVING_TRUCK_MAY          0x2FA
 
 #define FLAG_HIDE_VICTOR_WINSTRATE          0x300
 #define FLAG_HIDE_VICTORIA_WINSTRATE        0x301
@@ -489,7 +482,7 @@
 
 #define FLAG_HIDE_WALLY_PETALBURG_GYM       0x362
 #define FLAG_UNKNOWN_363                    0x363
-#define FLAG_HIDE_FAT_MAN_LITTLEROOT        0x364
+
 #define FLAG_HIDE_BRINEY_SLATEPORT_SHIPYARD 0x365
 #define FLAG_HIDE_LANETTE                   0x366
 #define FLAG_HIDE_LANETTE_FALLARBOR         0x367
@@ -515,7 +508,7 @@
 #define FLAG_HIDE_TUNNER_DIGGER_ROUTE116    0x37E
 #define FLAG_HIDE_ARTIST_LILCOVE_CONTEST    0x37F
 #define FLAG_UNKNOWN_BIRCH_380              0x380 // TODO: what should this be called?
-#define FLAG_HIDE_BIRCH_ROUTE101            0x381
+
 #define FLAG_HIDE_BIRCH_ROUTE103            0x382
 #define FLAG_HIDE_TRICKMASTER_END           0x383
 #define FLAG_HIDE_EVIL_TEAM_ROUTE110        0x384
@@ -609,7 +602,6 @@
 #define FLAG_HIDE_KECLEON_ROUTE120_7        0x3DC
 #define FLAG_HIDE_KECLEON_ROUTE119_1        0x3DD
 #define FLAG_HIDE_KECLEON_ROUTE119_2        0x3DE
-#define FLAG_HIDE_BOY_ROUTE101              0x3DF
 
 #define FLAG_ITEM_ROUTE102_1                0x3E8
 #define FLAG_ITEM_ROUTE116_1                0x3E9

@@ -5,8 +5,6 @@ LittlerootTown_BrendansHouse_2F_MapScripts:: @ 81527A4
 
 LittlerootTown_BrendansHouse_2F_MapScript1_1527AF:: @ 81527AF
 	call_if_unset FLAG_DEFEATED_RIVAL_ROUTE103, LittlerootTown_BrendansHouse_2F_EventScript_1527CE
-	compare VAR_LITTLEROOT_INTRO_STATE, 4
-	call_if_eq LittlerootTown_BrendansHouse_2F_EventScript_1B6950
 	call LittlerootTown_BrendansHouse_2F_EventScript_1A2F3D
 	setvar VAR_0x4089, 0
 	end

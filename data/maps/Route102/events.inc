@@ -1,4 +1,4 @@
-Route102_EventObjects:: @ 83811FC
+Route102_EventObjects::
 	object_event 1, EVENT_OBJ_GFX_LITTLE_BOY_2, 0, 18, 11, 3, MOVEMENT_TYPE_LOOK_AROUND, 0, 0, 0, 0, Route102_EventScript_14EADA, 0
 	object_event 2, EVENT_OBJ_GFX_YOUNGSTER, 0, 33, 14, 3, MOVEMENT_TYPE_FACE_DOWN, 0, 0, 1, 3, Route102_EventScript_14EAFE, 0
 	object_event 3, EVENT_OBJ_GFX_BUG_CATCHER, 0, 25, 15, 3, MOVEMENT_TYPE_FACE_UP, 0, 0, 1, 2, Route102_EventScript_14EB3C, 0
@@ -9,9 +9,9 @@ Route102_EventObjects:: @ 83811FC
 	object_event 8, EVENT_OBJ_GFX_BERRY_TREE, 0, 25, 2, 3, MOVEMENT_TYPE_BERRY_TREE_GROWTH, 0, 0, 0, 1, S_BerryTree, 0
 	object_event 9, EVENT_OBJ_GFX_YOUNGSTER, 0, 19, 4, 3, MOVEMENT_TYPE_FACE_DOWN, 1, 1, 1, 3, Route102_EventScript_14EB6A, 0
 
-Route102_MapBGEvents:: @ 83812D4
+Route102_MapBGEvents::
 	bg_event 17, 2, 0, BG_EVENT_PLAYER_FACING_ANY, Route102_EventScript_14EAEC
 	bg_event 40, 9, 0, BG_EVENT_PLAYER_FACING_ANY, Route102_EventScript_14EAE3
 
-Route102_MapEvents:: @ 83812EC
+Route102_MapEvents::
 	map_events Route102_EventObjects, 0x0, 0x0, Route102_MapBGEvents

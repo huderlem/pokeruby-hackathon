@@ -1,6 +1,5 @@
 LittlerootTown_BrendansHouse_2F_EventScript_1B6950:: @ 81B6950
 LittlerootTown_MaysHouse_2F_EventScript_1B6950:: @ 81B6950
-	setvar VAR_LITTLEROOT_INTRO_STATE, 5
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_1B6956:: @ 81B6956
@@ -14,7 +13,6 @@ LittlerootTown_MaysHouse_1F_EventScript_1B6956:: @ 81B6956
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_1B69AA
 	msgbox LittlerootTown_BrendansHouse_1F_Text_172453, 4
 	closemessage
-	setvar VAR_LITTLEROOT_INTRO_STATE, 4
 	applymovement 255, LittlerootTown_BrendansHouse_1F_Movement_1B69B5
 	applymovement VAR_SPECIAL_4, LittlerootTown_BrendansHouse_1F_Movement_1A0841
 	waitmovement 0
@@ -63,7 +61,6 @@ LittlerootTown_MaysHouse_2F_EventScript_1B69EB:: @ 81B69EB
 	msgbox LittlerootTown_BrendansHouse_2F_Text_172E18, 4
 	call LittlerootTown_BrendansHouse_2F_EventScript_1B6A9B
 	delay 30
-	setvar VAR_LITTLEROOT_INTRO_STATE, 6
 	setflag FLAG_SET_WALL_CLOCK
 	setflag FLAG_HIDE_MACHOKE_MOVER_1
 	setflag FLAG_HIDE_MACHOKE_MOVER_2
@@ -149,7 +146,6 @@ LittlerootTown_BrendansHouse_2F_Movement_1B6AB4:: @ 81B6AB4
 
 LittlerootTown_BrendansHouse_1F_EventScript_1B6AB8:: @ 81B6AB8
 LittlerootTown_MaysHouse_1F_EventScript_1B6AB8:: @ 81B6AB8
-	setvar VAR_LITTLEROOT_INTRO_STATE, 7
 	releaseall
 	end
 
@@ -251,16 +247,9 @@ LittlerootTown_BrendansHouse_1F_EventScript_1B6BE9:: @ 81B6BE9
 LittlerootTown_MaysHouse_1F_EventScript_1B6BE9:: @ 81B6BE9
 	lock
 	faceplayer
-	compare VAR_LITTLEROOT_HOUSES_STATE, 4
-	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_1B6C33
-	compare VAR_LITTLEROOT_HOUSES_STATE_2, 4
-	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_1B6C33
 	goto_if_set FLAG_BADGE05_GET, LittlerootTown_BrendansHouse_1F_EventScript_1B6C3D
-	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_BrendansHouse_1F_EventScript_1B6C72
 	compare VAR_TEMP_1, 1
 	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_1B6C80
-	compare VAR_LITTLEROOT_INTRO_STATE, 7
-	goto_if_ge LittlerootTown_BrendansHouse_1F_EventScript_1B6C9C
 	msgbox LittlerootTown_BrendansHouse_1F_Text_172429, 4
 	release
 	end
@@ -395,8 +384,6 @@ LittlerootTown_MaysHouse_1F_EventScript_1B6CDE:: @ 81B6CDE
 	playse SE_DOOR
 	removeobject VAR_SPECIAL_9
 	setflag FLAG_RECEIVED_SS_TICKET
-	setvar VAR_LITTLEROOT_HOUSES_STATE, 4
-	setvar VAR_LITTLEROOT_HOUSES_STATE_2, 4
 	releaseall
 	end
 

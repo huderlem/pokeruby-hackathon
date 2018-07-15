@@ -5,8 +5,6 @@ LittlerootTown_MaysHouse_2F_MapScripts:: @ 8152A50
 
 LittlerootTown_MaysHouse_2F_MapScript1_152A5B:: @ 8152A5B
 	call_if_unset FLAG_DEFEATED_RIVAL_ROUTE103, LittlerootTown_MaysHouse_2F_EventScript_152A7A
-	compare VAR_LITTLEROOT_INTRO_STATE, 4
-	call_if_eq LittlerootTown_MaysHouse_2F_EventScript_1B6950
 	call LittlerootTown_MaysHouse_2F_EventScript_1A2F3D
 	setvar VAR_0x4089, 0
 	end
@@ -37,8 +35,6 @@ LittlerootTown_MaysHouse_2F_EventScript_152A9D:: @ 8152A9D
 	call_if_eq LittlerootTown_BrendansHouse_2F_EventScript_152B4A
 	playse SE_KAIDAN
 	removeobject LAST_TALKED
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-	setvar VAR_LITTLEROOT_STATE, 1
 	savebgm 0
 	fadedefaultbgm
 	releaseall

@@ -52,7 +52,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_152CFA:: @ 8152CFA
 
 LittlerootTown_ProfessorBirchsLab_EventScript_152D19:: @ 8152D19
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_174015, 4
-	clearflag FLAG_HIDE_BOY_ROUTE101
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
@@ -129,8 +128,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_152DBA:: @ 8152DBA
 	setvar VAR_BIRCH_LAB_STATE, 5
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_ROUTE102_ACCESSIBLE, 1
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
-	setvar VAR_LITTLEROOT_STATE, 3
 	releaseall
 	end
 

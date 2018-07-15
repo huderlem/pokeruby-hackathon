@@ -1,12 +1,8 @@
 LittlerootTown_MaysHouse_1F_MapScripts:: @ 8152879
 	map_script 1, LittlerootTown_MaysHouse_1F_MapScript1_152889
-	map_script 3, LittlerootTown_MaysHouse_1F_MapScript1_1528C8
-	map_script 2, LittlerootTown_MaysHouse_1F_MapScript2_15290E
 	.byte 0
 
 LittlerootTown_MaysHouse_1F_MapScript1_152889:: @ 8152889
-	compare VAR_LITTLEROOT_INTRO_STATE, 6
-	call_if_lt LittlerootTown_MaysHouse_1F_EventScript_15289E
 	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_1528B1
 	end
 
@@ -25,15 +21,6 @@ LittlerootTown_MaysHouse_1F_EventScript_1528BE:: @ 81528BE
 	setmetatile 6, 7, 659, 1
 	return
 
-LittlerootTown_MaysHouse_1F_MapScript1_1528C8:: @ 81528C8
-	compare VAR_LITTLEROOT_INTRO_STATE, 3
-	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_152902
-	compare VAR_LITTLEROOT_INTRO_STATE, 5
-	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_1528EA
-	compare VAR_LITTLEROOT_INTRO_STATE, 6
-	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_1528F6
-	end
-
 LittlerootTown_MaysHouse_1F_EventScript_1528EA:: @ 81528EA
 	setobjectxyperm 1, 2, 4
 	setobjectmovementtype 1, 7
@@ -48,14 +35,6 @@ LittlerootTown_MaysHouse_1F_EventScript_152902:: @ 8152902
 	setobjectxyperm 1, 1, 8
 	setobjectmovementtype 1, 7
 	return
-
-LittlerootTown_MaysHouse_1F_MapScript2_15290E:: @ 815290E
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_152960
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_152938
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_152971
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_2, 1, LittlerootTown_MaysHouse_1F_EventScript_152982
-	map_script_2 VAR_LITTLEROOT_HOUSES_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_1B6CDE
-	.2byte 0
 
 LittlerootTown_MaysHouse_1F_EventScript_152938:: @ 8152938
 	lockall
@@ -100,7 +79,6 @@ LittlerootTown_MaysHouse_1F_EventScript_152982:: @ 8152982
 	special GetRivalSonDaughterString
 	msgbox LittlerootTown_MaysHouse_1F_Text_1730C2, 4
 	setflag FLAG_MET_RIVAL_MOM
-	setvar VAR_LITTLEROOT_HOUSES_STATE_2, 2
 	releaseall
 	end
 
@@ -135,9 +113,6 @@ LittlerootTown_MaysHouse_1F_EventScript_1529EB:: @ 81529EB
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, LittlerootTown_BrendansHouse_1F_EventScript_152A21
-	goto_if_set FLAG_RIVAL_LEFT_FOR_ROUTE103, LittlerootTown_BrendansHouse_1F_EventScript_152A17
-	compare VAR_LITTLEROOT_RIVAL_STATE, 3
-	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_152A2B
 	special GetRivalSonDaughterString
 	msgbox LittlerootTown_BrendansHouse_1F_Text_1731C6, 4
 	release
