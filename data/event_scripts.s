@@ -1285,6 +1285,11 @@ gUnknown_0819FA81:: @ 819FA81
 	setflag FLAG_HIDE_RIVAL_OLDALE_TOWN
 	setflag FLAG_HIDE_WALLY_DEFEATED_VICTORY_ROAD
 	call Event_ResetBerryTrees
+	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setflag FLAG_SYS_B_DASH
 	end
 
 EverGrandeCity_HallOfFame_EventScript_19FC13:: @ 819FC13

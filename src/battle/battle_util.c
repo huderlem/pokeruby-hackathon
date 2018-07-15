@@ -3441,7 +3441,10 @@ u8 GetMoveTarget(u16 move, u8 useMoveTarget) //get move target
 
 u8 IsMonDisobedient(void)
 {
-    u8 obedienceLevel;
+    // Always obedient.
+    return 0;
+
+    /*u8 obedienceLevel;
     s32 rnd;
     s32 calc;
 
@@ -3545,5 +3548,5 @@ u8 IsMonDisobedient(void)
             gBattlescriptCurrInstr = BattleScript_MoveUsedLoafingAround;
             return 1;
         }
-    }
+    }*/
 }

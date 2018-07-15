@@ -203,6 +203,7 @@ void NewGameInitData(void)
     ResetLotteryCorner();
     WarpToInitialMap();
     ScriptContext2_RunNewScript(gUnknown_0819FA81);
+    EnableNationalPokedex();
 }
 
 #if DEBUG
