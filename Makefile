@@ -64,7 +64,7 @@ LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
 
 #### Main Rules ####
 
-ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug
+ALL_BUILDS := ruby ruby_rev1 ruby_rev2 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug
 
 # Available targets
 .PHONY: all clean tidy tools $(ALL_BUILDS)
@@ -122,6 +122,7 @@ tools:
 	@$(MAKE) -C tools/rsfont
 	@$(MAKE) -C tools/aif2pcm
 	@$(MAKE) -C tools/ramscrgen
+	@$(MAKE) -C tools/mid2agb
 
 tidy:
 	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
@@ -171,6 +172,7 @@ include castform.mk
 include tilesets.mk
 include fonts.mk
 include misc.mk
+include spritesheet_rules.mk
 include override.mk
 
 %.1bpp:   %.png ; $(GBAGFX) $< $@ $(GFX_OPTS)

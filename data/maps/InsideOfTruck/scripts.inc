@@ -24,7 +24,7 @@ InsideOfTruck_EventScript_15FC29:: @ 815FC29
 	end
 
 InsideOfTruck_EventScript_15FC45:: @ 815FC45
-	setrespawn 1
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	setflag FLAG_HIDE_MAY_MOM_DOWNSTAIRS
 	setflag FLAG_HIDE_BRENDAN_MOM
 	setflag FLAG_HIDE_BRENDAN_UPSTAIRS
@@ -33,7 +33,7 @@ InsideOfTruck_EventScript_15FC45:: @ 815FC45
 	end
 
 InsideOfTruck_EventScript_15FC68:: @ 815FC68
-	setrespawn 2
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
 	setflag FLAG_HIDE_BRENDAN_MOM_DOWNSTAIRS
 	setflag FLAG_HIDE_MAY_MOM
 	setflag FLAG_HIDE_MAY_UPSTAIRS
