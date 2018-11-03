@@ -24,6 +24,7 @@
 #include "load_save.h"
 #include "main.h"
 #include "m4a.h"
+#include "map_gen.h"
 #include "map_name_popup.h"
 #include "menu.h"
 #include "metatile_behavior.h"
@@ -413,6 +414,9 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1.location.mapGroup, gSaveBlock1.location.mapNum);
     gSaveBlock1.mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout();
+
+    if (IsGeneratedMap(gSaveBlock1.location.mapNum, gSaveBlock1.location.mapGroup))
+        GenerateMap();
 }
 
 static void LoadSaveblockMapHeader(void)

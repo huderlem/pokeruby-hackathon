@@ -493,6 +493,7 @@ gMapGroup32::
 	.align 2
 gMapGroup33::
 	.4byte Route124_DivingTreasureHuntersHouse
+	.4byte HackGym
 
 	.align 2
 gMapGroups::

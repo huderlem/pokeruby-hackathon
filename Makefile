@@ -33,7 +33,7 @@ CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef -Werror -Wno
 
 #### Files ####
 
-ROM := poke$(BUILD_NAME).gba
+ROM := poke$(BUILD_NAME)-hack.gba
 MAP := $(ROM:%.gba=%.map)
 
 BUILD_DIR := build/$(BUILD_NAME)

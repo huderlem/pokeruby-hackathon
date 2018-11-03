@@ -70,16 +70,7 @@ void AGBPutc(const char cChr)
 
 void AGBPrint(const char *pBuf)
 {
-    volatile struct AGBPrintStruct *pPrint = (struct AGBPrintStruct *)AGB_PRINT_STRUCT_ADDR;
-    u16 *pWSCNT = (u16 *)REG_ADDR_WAITCNT;
-    u16 nOldWSCNT = *pWSCNT;
-    *pWSCNT = WSCNT_DATA;
-    while (*pBuf)
-    {
-        AGBPutc(*pBuf);
-        pBuf++;
-    }
-    *pWSCNT = nOldWSCNT;
+    *(volatile u32*)NOCASHGBAPRINTADDR2 = (u32)pBuf;
 }
 
 void AGBPrintf(const char *pBuf, ...)

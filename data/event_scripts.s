@@ -618,6 +618,7 @@ EventScript_15F573:
 	.include "data/maps/Route119_WeatherInstitute_2F/scripts.inc"
 	.include "data/maps/Route119_House/scripts.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/scripts.inc"
+	.include "data/maps/HackGym/scripts.inc"
 
 	.include "data/maps/PetalburgCity/text.inc"
 	.include "data/maps/SlateportCity/text.inc"
@@ -896,6 +897,7 @@ UnknownString_819C21F: @ 819C21F
 	.include "data/maps/Route119_WeatherInstitute_2F/text.inc"
 	.include "data/maps/Route119_House/text.inc"
 	.include "data/maps/Route124_DivingTreasureHuntersHouse/text.inc"
+	.include "data/maps/HackGym/text.inc"
 
 
 Std_2:

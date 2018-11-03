@@ -332,3 +332,4 @@ gMapLayouts::
 	.4byte SafariZone_RestHouse_Layout
 	.4byte SkyPillar_5F_Layout
 	.4byte SkyPillar_Top_Layout
+	.4byte gMapGenLayout
