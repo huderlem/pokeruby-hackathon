@@ -409,7 +409,7 @@ struct MapHeader *const GetDestinationWarpMapHeader(void)
     return Overworld_GetMapHeaderByGroupAndId(gWarpDestination.mapGroup, gWarpDestination.mapNum);
 }
 
-static void LoadCurrentMapData(void)
+void LoadCurrentMapData(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1.location.mapGroup, gSaveBlock1.location.mapNum);
     gSaveBlock1.mapLayoutId = gMapHeader.mapLayoutId;
@@ -423,6 +423,9 @@ static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1.location.mapGroup, gSaveBlock1.location.mapNum);
     gMapHeader.mapLayout = GetMapLayout();
+
+    if (IsGeneratedMap(gSaveBlock1.location.mapNum, gSaveBlock1.location.mapGroup))
+        GenerateMap();
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -1493,9 +1496,16 @@ void CB2_ContinueSavedGame(void)
     }
     else
     {
-        gFieldCallback = sub_805470C;
-        SetMainCallback1(CB1_Overworld);
-        CB2_ReturnToField();
+        if (IsGeneratedMap(gSaveBlock1.location.mapNum, gSaveBlock1.location.mapGroup))
+        {
+            SetMainCallback2(CB2_LoadMap);
+        }
+        else
+        {
+            gFieldCallback = sub_805470C;
+            SetMainCallback1(CB1_Overworld);
+            CB2_ReturnToField();
+        }
     }
 }
 

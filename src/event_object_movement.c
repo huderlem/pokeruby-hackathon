@@ -1044,12 +1044,15 @@ static void ClearEventObject(struct EventObject *eventObject)
     eventObject->movementActionId = 0xFF;
 }
 
-static void ClearAllEventObjects(void)
+static void ClearAllEventObjects(bool8 preservePlayer)
 {
     u8 i;
 
     for (i = 0; i < EVENT_OBJECTS_COUNT; i++)
-        ClearEventObject(&gEventObjects[i]);
+    {
+        if (!(preservePlayer && gEventObjects[i].isPlayer))
+            ClearEventObject(&gEventObjects[i]);
+    }
 #if DEBUG
     gUnknown_Debug_03004BC0 = 0;
 #endif
@@ -1058,9 +1061,23 @@ static void ClearAllEventObjects(void)
 void ResetEventObjects(void)
 {
     ClearLinkPlayerEventObjects();
-    ClearAllEventObjects();
+    ClearAllEventObjects(FALSE);
     ClearPlayerAvatarInfo();
     CreateReflectionEffectSprites();
+}
+
+void RemoveNonPlayerEventObjects(void)
+{
+    int i;
+
+    for (i = 0; i < EVENT_OBJECTS_COUNT; i++)
+    {
+        if (!gEventObjects[i].isPlayer && gEventObjects[i].active)
+        {
+            RemoveEventObjectInternal(&gEventObjects[i]);
+            ClearEventObject(&gEventObjects[i]);
+        }
+    }
 }
 
 static void CreateReflectionEffectSprites(void)

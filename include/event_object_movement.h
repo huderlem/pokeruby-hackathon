@@ -462,5 +462,6 @@ u8 GetLedgeJumpDirection(s16, s16, u8);
 u8 ZCoordToPriority(u8);
 void EventObjectUpdateZCoord(struct EventObject *pObject);
 void SetObjectSubpriorityByZCoord(u8, struct Sprite *, u8);
+void RemoveNonPlayerEventObjects(void);
 
 #endif // GUARD_EVENTOBJMV_H

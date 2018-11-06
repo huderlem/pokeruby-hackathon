@@ -35,7 +35,7 @@ void ResetGameStats(void);
 void IncrementGameStat(u8 index);
 u32 GetGameStat(u8 index);
 void SetGameStat(u8, u32);
-// LoadEventObjTemplatesFromHeader
+void LoadEventObjTemplatesFromHeader(void);
 // LoadSaveblockEventObjScripts
 void Overworld_SetEventObjTemplateCoords(u8, s16, s16);
 void Overworld_SetEventObjTemplateMovementType(u8, u8);
@@ -211,5 +211,6 @@ void sub_805465C(void);
 
 void CB2_InitTestMenu(void);
 void debug_sub_8058C00(void);
+void LoadCurrentMapData(void);
 
 #endif // GUARD_ROM4_H

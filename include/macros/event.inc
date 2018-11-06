@@ -1317,45 +1317,8 @@
 	.byte 0xc5
 	.endm
 
-	@ Writes the name of the specified (box) PC box to the specified buffer.
-	.macro bufferboxname out, box
+	.macro mapgen
 	.byte 0xc6
-	.byte \out
-	.2byte \box
-	.endm
-
-	@ Sets the color of the text in standard message boxes. 0x00 produces blue (male) text, 0x01 produces red (female) text, 0xFF resets the color to the default for the current OW's gender, and all other values produce black text.
-	.macro textcolor color
-	.byte 0xc7
-	.byte \color
-	.endm
-
-	@ The exact purpose of this command is unknown, but it is related to the blue help-text box that appears on the bottom of the screen when the Main Menu is opened.
-	.macro loadhelp pointer
-	.byte 0xc8
-	.4byte \pointer
-	.endm
-
-	@ The exact purpose of this command is unknown, but it is related to the blue help-text box that appears on the bottom of the screen when the Main Menu is opened.
-	.macro unloadhelp
-	.byte 0xc9
-	.endm
-
-	@ After using this command, all standard message boxes will use the signpost frame.
-	.macro signmsg
-	.byte 0xca
-	.endm
-
-	@ Ends the effects of signmsg, returning message box frames to normal.
-	.macro normalmsg
-	.byte 0xcb
-	.endm
-
-	@ Compares the value of a hidden variable to a dword.
-	.macro comparehiddenvar a, value
-	.byte 0xcc
-	.byte \a
-	.4byte \value
 	.endm
 
 @ Supplementary

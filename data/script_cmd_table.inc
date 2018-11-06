@@ -198,6 +198,7 @@ gScriptCmdTable:: @ 814AE30
 	.4byte ScrCmd_incrementgamestat       @ 0xC3
 	.4byte ScrCmd_setescapewarp           @ 0xC4
 	.4byte ScrCmd_waitmoncry              @ 0xC5
+	.4byte ScrCmd_mapgen                  @ 0xC6
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

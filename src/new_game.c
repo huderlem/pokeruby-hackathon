@@ -204,6 +204,7 @@ void NewGameInitData(void)
     WarpToInitialMap();
     ScriptContext2_RunNewScript(gUnknown_0819FA81);
     EnableNationalPokedex();
+    gSaveBlock1.mapGenSeed = Random();
 }
 
 #if DEBUG

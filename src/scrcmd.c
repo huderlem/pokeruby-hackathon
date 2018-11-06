@@ -42,6 +42,7 @@
 #include "sound.h"
 #include "string_util.h"
 #include "tv.h"
+#include "map_gen.h"
 #include "constants/maps.h"
 
 typedef u16 (*SpecialFunc)(void);
@@ -2017,4 +2018,11 @@ bool8 ScrCmd_takecoins(struct ScriptContext *ctx)
     else
         gSpecialVar_Result = 1;
     return FALSE;
+}
+
+bool8 ScrCmd_mapgen(struct ScriptContext *ctx)
+{
+    CreateTask(Task_GenerateMap, 80);
+    SetupNativeScript(ctx, WaitGenerateMap);
+    return TRUE;
 }

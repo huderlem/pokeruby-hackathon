@@ -50,6 +50,7 @@ extern bool8 gSoftResetDisabled;
 extern bool8 gLinkVSyncDisabled;
 extern const u8 gGameVersion;
 extern const u8 gGameLanguage;
+extern u8 gDisableRNGAdvance;
 
 extern u16 gKeyRepeatStartDelay;
 

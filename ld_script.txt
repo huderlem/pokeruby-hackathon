@@ -767,6 +767,7 @@ SECTIONS {
         src/libs/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
         src/field_control_avatar.o(.rodata);
+        src/event_obj_lock.o(.rodata);
     } =0
 
     song_data :

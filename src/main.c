@@ -72,6 +72,7 @@ s8 gPcmDmaCounter;
 
 EWRAM_DATA u8 gSharedMem[0x20000] = {0};
 EWRAM_DATA void (**gFlashTimerIntrFunc)(void) = NULL;
+EWRAM_DATA u8 gDisableRNGAdvance = 0;
 
 static void UpdateLinkAndCallCallbacks(void);
 static void InitMainCallbacks(void);
@@ -311,7 +312,8 @@ static void VBlankIntr(void)
 
     m4aSoundMain();
     sub_800C35C();
-    Random();
+    if (!gDisableRNGAdvance)
+        Random();
 
     INTR_CHECK |= INTR_FLAG_VBLANK;
     gMain.intrCheck |= INTR_FLAG_VBLANK;
