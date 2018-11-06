@@ -131,5 +131,6 @@ bool8 MetatileBehavior_IsVase(u8);
 bool8 MetatileBehavior_IsTrashCan(u8);
 bool8 MetatileBehavior_IsShopShelf(u8);
 bool8 MetatileBehavior_IsBlueprint(u8);
+bool8 MetatileBehavior_IsFootStars(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR

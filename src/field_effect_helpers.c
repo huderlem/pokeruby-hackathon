@@ -543,6 +543,53 @@ u32 FldEff_DeepSandFootprints(void)
     return spriteId;
 }
 
+u32 FldEff_FootStars(void)
+{
+    u8 spriteId;
+    struct Sprite *sprite;
+
+    sub_8060470((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
+    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[36], gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
+    if (spriteId != MAX_SPRITES)
+    {
+        sprite = &gSprites[spriteId];
+        sprite->coordOffsetEnabled = TRUE;
+        sprite->oam.priority = gFieldEffectArguments[3];
+        sprite->data[1] = gFieldEffectArguments[4];
+        sprite->data[7] = FLDEFF_SAND_FOOTPRINTS;
+        StartSpriteAnim(sprite, 0);
+    }
+    return 0;
+}
+
+void UpdateFootStarsFieldEffect(struct Sprite *sprite)
+{
+    if (++sprite->data[0] > 30)
+    {
+        FieldEffectStop(sprite, sprite->data[7]);
+    }
+    else
+    {
+        if (sprite->data[1] == DIR_NORTH)
+        {
+            sprite->pos1.y++;
+        }
+        else if (sprite->data[1] == DIR_SOUTH)
+        {
+            sprite->pos1.y--;
+        }
+        else if (sprite->data[1] == DIR_WEST)
+        {
+            sprite->pos1.x++;
+        }
+        else if (sprite->data[1] == DIR_EAST)
+        {
+            sprite->pos1.x--;
+        }
+        UpdateEventObjectSpriteVisibility(sprite, FALSE);
+    }
+}
+
 u32 FldEff_BikeTireTracks(void)
 {
     u8 spriteId;

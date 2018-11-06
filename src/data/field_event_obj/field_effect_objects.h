@@ -894,4 +894,26 @@ const struct SpriteTemplate gFieldEffectSpriteTemplate_Sparkle = {0xFFFF, 0x100F
 
 const struct SpritePalette gFieldEffectObjectPaletteInfo3 = {gFieldEffectObjectPalette3, 0x100F};
 
+const struct SpriteFrameImage gFieldEffectPicTable_FootStars[] = {
+    overworld_frame(gFieldEffectPic_FootStars, 2, 2, 0),
+    overworld_frame(gFieldEffectPic_FootStars, 2, 2, 1)
+};
+
+const union AnimCmd gFieldEffectAnim_FootStars1[] = {
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_END
+};
+
+const union AnimCmd *const gFieldEffectAnimTable_FootStars[] = {
+    gFieldEffectAnim_FootStars1,
+};
+
+const struct SpriteTemplate gFieldEffectSpriteTemplate_FootStars = {0xFFFF, 0x100F, &gFieldOamData_16x16, gFieldEffectAnimTable_FootStars, gFieldEffectPicTable_FootStars, gDummySpriteAffineAnimTable, UpdateFootStarsFieldEffect};
+
 #endif //POKERUBY_FIELD_EFFECT_OBJECTS_H

@@ -44,5 +44,6 @@ const u32 gFieldEffectPic_Bubbles[] = INCBIN_U32("graphics/field_effect_objects/
 const u32 gFieldEffectPic_Sparkle[] = INCBIN_U32("graphics/field_effect_objects/pics/sparkle.4bpp");
 const u16 gFieldEffectObjectPalette3[] = INCBIN_U16("graphics/field_effect_objects/palettes/03.gbapal");
 const u32 gFieldEffectPic_Bird[] = INCBIN_U32("graphics/field_effect_objects/pics/bird.4bpp");
+const u32 gFieldEffectPic_FootStars[] = INCBIN_U32("graphics/field_effect_objects/pics/foot_stars.4bpp");
 
 #endif // POKERUBY_FIELD_EFFECT_OBJECT_GFX_H

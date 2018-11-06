@@ -23,6 +23,7 @@
 #define GROUND_EFFECT_FLAG_SHORT_GRASS           (1 << 17)
 #define GROUND_EFFECT_FLAG_HOT_SPRINGS           (1 << 18)
 #define GROUND_EFFECT_FLAG_SEAWEED               (1 << 19)
+#define GROUND_EFFECT_FLAG_FOOT_STARS            (1 << 20)
 
 extern const u8 gReflectionEffectPaletteMap[];
 

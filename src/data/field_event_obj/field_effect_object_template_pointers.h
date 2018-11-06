@@ -41,6 +41,7 @@ const struct SpriteTemplate gFieldEffectSpriteTemplate_PopOutOfAsh;
 const struct SpriteTemplate gFieldEffectSpriteTemplate_LavaridgeGymWarp;
 const struct SpriteTemplate gFieldEffectSpriteTemplate_Bubbles;
 const struct SpriteTemplate gFieldEffectSpriteTemplate_Sparkle;
+const struct SpriteTemplate gFieldEffectSpriteTemplate_FootStars;
 
 const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[] = {
     &gFieldEffectSpriteTemplate_ShadowSmall,
@@ -78,7 +79,8 @@ const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[] = {
     &gFieldEffectSpriteTemplate_PopOutOfAsh,
     &gFieldEffectSpriteTemplate_LavaridgeGymWarp,
     &gFieldEffectSpriteTemplate_Bubbles,
-    &gFieldEffectSpriteTemplate_Sparkle
+    &gFieldEffectSpriteTemplate_Sparkle,
+    &gFieldEffectSpriteTemplate_FootStars,
 };
 
 #endif //POKERUBY_FIELD_EFFECT_OBJECT_TEMPLATE_POINTERS_H

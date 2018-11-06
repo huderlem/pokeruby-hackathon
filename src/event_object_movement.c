@@ -90,6 +90,7 @@ static void GetGroundEffectFlags_ShortGrass(struct EventObject *, u32 *);
 static void GetGroundEffectFlags_HotSprings(struct EventObject *, u32 *);
 static void GetGroundEffectFlags_Seaweed(struct EventObject *, u32 *);
 static void GetGroundEffectFlags_JumpLanding(struct EventObject *, u32 *);
+static void GetGroundEffectFlags_FootStars(struct EventObject *, u32 *);
 static u8 EventObjectCheckForReflectiveSurface(struct EventObject *);
 static void DoRippleFieldEffect(struct EventObject *eventObj, struct Sprite *sprite);
 
@@ -7242,6 +7243,7 @@ static void GetAllGroundEffectFlags_OnBeginStep(struct EventObject *eventObj, u3
     GetGroundEffectFlags_Puddle(eventObj, flags);
     GetGroundEffectFlags_ShortGrass(eventObj, flags);
     GetGroundEffectFlags_HotSprings(eventObj, flags);
+    GetGroundEffectFlags_FootStars(eventObj, flags);
 }
 
 static void GetAllGroundEffectFlags_OnFinishStep(struct EventObject *eventObj, u32 *flags)
@@ -7449,6 +7451,15 @@ static void GetGroundEffectFlags_JumpLanding(struct EventObject *eventObj, u32 *
                 return;
             }
         }
+    }
+}
+
+static void GetGroundEffectFlags_FootStars(struct EventObject *eventObj, u32 *flags)
+{
+    if (MetatileBehavior_IsFootStars(eventObj->currentMetatileBehavior)
+        && MetatileBehavior_IsFootStars(eventObj->previousMetatileBehavior))
+    {
+        *flags |= GROUND_EFFECT_FLAG_FOOT_STARS;
     }
 }
 
@@ -7732,9 +7743,9 @@ static void nullsub(struct EventObject *eventObj, struct Sprite *sprite, u8 a)
 static void DoTracksGroundEffect_Footprints(struct EventObject *eventObj, struct Sprite *sprite, u8 a)
 {
     // First half-word is a Field Effect script id. (gFieldEffectScriptPointers)
-    u16 sandFootprints_FieldEffectData[2] = {
+    u16 sandFootprints_FieldEffectData[] = {
         FLDEFF_SAND_FOOTPRINTS,
-        FLDEFF_DEEP_SAND_FOOTPRINTS
+        FLDEFF_DEEP_SAND_FOOTPRINTS,
     };
 
     gFieldEffectArguments[0] = eventObj->previousCoords.x;
@@ -7861,6 +7872,16 @@ void GroundEffect_Seaweed(struct EventObject *eventObj, struct Sprite *sprite)
     FieldEffectStart(FLDEFF_BUBBLES);
 }
 
+void GroundEffect_FootStars(struct EventObject *eventObj, struct Sprite *sprite)
+{
+    gFieldEffectArguments[0] = eventObj->previousCoords.x;
+    gFieldEffectArguments[1] = eventObj->previousCoords.y;
+    gFieldEffectArguments[2] = 149;
+    gFieldEffectArguments[3] = 2;
+    gFieldEffectArguments[4] = eventObj->facingDirection;
+    FieldEffectStart(FLDEFF_FOOT_STARS);
+}
+
 static void (*const sGroundEffectFuncs[])(struct EventObject *eventObj, struct Sprite *sprite) = {
     GroundEffect_SpawnOnTallGrass,
     GroundEffect_MoveOnTallGrass,
@@ -7881,7 +7902,8 @@ static void (*const sGroundEffectFuncs[])(struct EventObject *eventObj, struct S
     GroundEffect_JumpLandingDust,
     GroundEffect_ShortGrass,
     GroundEffect_HotSprings,
-    GroundEffect_Seaweed
+    GroundEffect_Seaweed,
+    GroundEffect_FootStars,
 };
 
 static void StartTriggeredGroundEffects(struct EventObject *eventObj, struct Sprite *sprite, u32 flags)

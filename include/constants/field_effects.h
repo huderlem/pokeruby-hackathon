@@ -65,5 +65,6 @@
 #define FLDEFF_SECRET_BASE_PC_TURN_ON    61
 #define FLDEFF_HALL_OF_FAME_RECORD       62
 #define FLDEFF_USE_TELEPORT              63
+#define FLDEFF_FOOT_STARS                64
 
 #endif

@@ -35,7 +35,7 @@ static const u8 sTileBitAttributes[] =
     TILE_ATTRIBUTES(FALSE, FALSE, FALSE), // MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
     TILE_ATTRIBUTES(TRUE, FALSE, FALSE),  // MB_STAIRS_OUTSIDE_ABANDONED_SHIP
     TILE_ATTRIBUTES(TRUE, FALSE, FALSE),  // MB_SHOAL_CAVE_ENTRANCE
-    TILE_ATTRIBUTES(FALSE, FALSE, FALSE), // MB_UNUSED_1D
+    TILE_ATTRIBUTES(FALSE, FALSE, FALSE), // MB_FOOT_STARS
     TILE_ATTRIBUTES(FALSE, FALSE, FALSE), // MB_UNUSED_1E
     TILE_ATTRIBUTES(FALSE, FALSE, FALSE), // MB_UNUSED_1F
     TILE_ATTRIBUTES(TRUE, FALSE, FALSE),  // MB_ICE
@@ -1371,6 +1371,14 @@ bool8 MetatileBehavior_IsShopShelf(u8 metatileBehavior)
 bool8 MetatileBehavior_IsBlueprint(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_BLUEPRINT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsFootStars(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FOOT_STARS)
         return TRUE;
     else
         return FALSE;

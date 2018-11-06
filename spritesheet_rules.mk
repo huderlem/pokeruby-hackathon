@@ -576,3 +576,6 @@ $(FIELDEFFGFXDIR)/unknown_20.4bpp: %.4bpp: %.png
 
 $(FIELDEFFGFXDIR)/unused_grass.4bpp: %.4bpp: %.png
 	$(GBAGFX) $< $@ -mwidth 2 -mheight 2
+
+$(FIELDEFFGFXDIR)/foot_stars.4bpp: %.4bpp: %.png
+	$(GBAGFX) $< $@ -mwidth 2 -mheight 2

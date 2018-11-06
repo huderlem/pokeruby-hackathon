@@ -70,6 +70,7 @@ gFieldEffectScriptPointers:: @ 81D9B34
 	.4byte gFieldEffectScript_SecretBasePCTurnOn
 	.4byte gFieldEffectScript_HallOfFameRecord
 	.4byte gFieldEffectScript_UseTeleport
+	.4byte gFieldEffectScript_FootStars
 
 gFieldEffectScript_ExclamationMarkIcon: @ 81D9C34
 	callnative FldEff_ExclamationMarkIcon
@@ -328,4 +329,8 @@ gFieldEffectScript_HallOfFameRecord: @ 81D9E32
 
 gFieldEffectScript_UseTeleport: @ 81D9E41
 	callnative FldEff_UseTeleport
+	end
+
+gFieldEffectScript_FootStars:
+	loadfadedpal_callnative gFieldEffectObjectPaletteInfo3, FldEff_FootStars
 	end
