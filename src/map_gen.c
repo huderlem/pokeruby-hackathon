@@ -1,4 +1,5 @@
 #include "global.h"
+#include "blend_palette.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
 #include "fldeff_poison.h"
@@ -388,6 +389,7 @@ void Task_GenerateMap(u8 taskId)
         return;
     }
 
+    BlendPalette(0, 0x100, data[1] / 2, RGB(14, 0, 14));
     REG_MOSAIC = ((data[1] / 2) << 4) | data[1];
 }
 
